@@ -61,6 +61,7 @@
             this.txtAmunt.Name = "txtAmunt";
             this.txtAmunt.Size = new System.Drawing.Size(182, 30);
             this.txtAmunt.TabIndex = 1;
+            this.txtAmunt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmunt_KeyPress);
             // 
             // panel1
             // 

@@ -145,9 +145,102 @@ namespace UnitConverter
                     break;
             }
 
-            return amount;
+            return  convertedValue;
         }
 
+
+        public double ConvertTimeUnit(TimeEnum from, TimeEnum to, double amount)
+        {
+            double convertedValue= 0;
+
+            switch (from)
+            {
+                case TimeEnum.Miliseconds:
+                    switch (to)
+                    {
+                        
+                        case TimeEnum.Seconds:
+                            convertedValue = amount/1000;
+                            break;
+                        case TimeEnum.Minutes:
+                            convertedValue = amount/60000;
+                            break;
+                        case TimeEnum.Hours:
+                            convertedValue = amount / 3600000;
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                    break;
+                case TimeEnum.Seconds:
+                    switch (to)
+                    {
+
+                        case TimeEnum.Miliseconds:
+                            convertedValue = amount * 100;
+                            break;
+                        case TimeEnum.Minutes:
+                            convertedValue = amount / 60;
+                            break;
+                        case TimeEnum.Hours:
+                            convertedValue = amount / 3600;
+                            break;
+                        default:
+                            break;
+                    }
+
+
+
+
+                    break;
+                case TimeEnum.Minutes:
+                    switch (to)
+                    {
+
+                        case TimeEnum.Miliseconds:
+                            convertedValue = amount * 60000;
+                            break;
+                        case TimeEnum.Seconds:
+                            convertedValue = amount * 60;
+                            break;
+                        case TimeEnum.Hours:
+                            convertedValue = amount / 60;
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                    break;
+                case TimeEnum.Hours:
+                    switch (to)
+                    {
+
+                        case TimeEnum.Miliseconds:
+                            convertedValue = amount * 3600000;
+                            break;
+                        case TimeEnum.Seconds:
+                            convertedValue = amount * 3600;
+                            break;
+                        case TimeEnum.Minutes:
+                            convertedValue = amount * 60;
+                            break;
+                        default:
+                            break;
+                    }
+
+
+                    break;
+                default:
+                    break;
+            }
+
+
+
+            return convertedValue;
+        }
 
 
 
